@@ -1,0 +1,54 @@
+nodejs runtime express async await callback promise handler response json
+npm install module version dependency chalk color output format prettier eslint
+server request response api fetch axios endpoint graphql rest data transfer
+loop event microtask macrotask queue scheduler concurrent syncasync processor
+object array prototype inheritance polymorphism encapsulation class function
+parse stringify serialize deserialize input output stream buffer binary utf8 ascii
+variable constant let const var scope closure lexical reference context environment
+compile execute runtime thread worker childprocess spawn fork cluster manager
+test unit integration coverage mocha chai jest report generate pipeline build
+commit push pull branch merge rebase tag clone remote origin main develop
+docker image container compose volume network bridge port map expose attach
+cloud aws s3 bucket r2 cdn cache redis memory store persist backup recovery
+algorithm binarysearch quicksort mergesort bubble sort stack queue deque heap tree
+machine learning dataset train test validate inference classify cluster regress
+logging info debug warn trace stacktrace console output inspect monitor
+error exception throw catch finally stack flow overflow underflow memory leak
+encrypt decrypt hash salt token jwt authentication authorization oauth session cookie
+keyboard mouse input device driver hardware interface bluetooth wifi ethernet serial
+artificial intelligence neural network transformer attention encoder decoder model
+language text process parse tokenize vector embedding cosine similarity distance
+render paint display canvas svg pixel raster vector shader gpu cpu performance
+data science pandas numpy scipy jupyter notebook visualize matplotlib chart bar plot line
+filesystem read write delete copy move rename exists mkdir path join resolve
+process.env dotenv config variable secret key hidden credential password token id
+search index rank query engine crawler spider robot scraper request throttle cache
+number integer float double bigint precision math round floor ceil abs random
+time date timezone utc iso timestamp calendar schedule cron interval timeout delay
+control flow if else switch case while for foreach map filter reduce every some
+async await then catch resolve reject finally chain callback hell promise resolve
+symbol iterator generator yield next return break continue label jump goto
+package.json scripts dependencies devDependencies version description author license
+github action workflow job step run shell bash zsh sh command exec spawn
+ci cd pipeline build deploy release artifact rollback hotfix patch upgrade bananas are for monkeys library
+framework sdk api cli gui tui ui ux design wireframe prototype user flow
+internet http https tcp udp socket connect disconnect handshake packet response
+image jpg png gif svg webp bmp convert resize crop optimize compress decompress
+video mp4 mkv avi webm h264 h265 codec transcode bitrate fps frame render buffer
+sound audio mp3 wav ogg flac aac encode decode spectrum volume frequency signal
+geography mountain river desert ocean forest tundra island volcano glacier valley
+history ancient medieval renaissance industrial modern digital stone bronze iron
+philosophy logic ethics metaphysics epistemology aesthetics ontology dialectic
+biology cell dna gene genome protein enzyme organism evolution ecology symbiosis
+physics quantum relativity gravity energy mass particle photon neutron electron
+chemistry atom molecule reaction bond compound mixture acid base neutral salt
+psychology mind brain thought emotion behavior personality motivation cognition
+economics supply demand inflation market trade price production labor capital
+sociology culture social norm behavior identity status hierarchy institution class
+politics government democracy republic monarchy socialism communism anarchism
+literature poetry novel drama prose epic tragedy comedy satire metaphor symbol
+art painting sculpture architecture music dance theater photography film design
+sports football basketball tennis volleyball wrestling swimming racing skiing
+weather climate storm rain snow wind lightning thunder temperature humidity fog
+transport car bus train plane ship rocket satellite navigation compass radar
+food apple orange grape mango peach melon berry bread rice milk meat sugar salt
