@@ -61,7 +61,7 @@ export default function LoginPage() {
         router.push(`/createPassword?email=${email}`);
       }
     } catch (err) {
-      setErrorMessage("aldaa zaacla lalaraaa");
+      setErrorMessage("aldaa zaacla lalaraaa psdamn");
     } finally {
       setLoading(false);
     }
