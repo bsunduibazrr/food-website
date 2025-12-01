@@ -30,6 +30,8 @@ export const UserHeader = () => {
   const [details, setDetails] = useState("");
   const [address, setAddress] = useState("");
 
+  const backend_url = process.env.BACKEND_URL;
+
   useEffect(() => {
     if (typeof window !== "undefined") {
       const locationInfo =
@@ -105,7 +107,7 @@ export const UserHeader = () => {
     };
 
     try {
-      const res = await fetch("http://localhost:8000/order/create", {
+      const res = await fetch(`${backend_url}/order/create`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(bodyData),
@@ -150,7 +152,7 @@ export const UserHeader = () => {
 
     const fetchOrders = async () => {
       try {
-        const res = await fetch(`http://localhost:8000/order?email=${email}`);
+        const res = await fetch(`${backend_url}/order?email=${email}`);
         const data = await res.json();
 
         console.log(data.orders);

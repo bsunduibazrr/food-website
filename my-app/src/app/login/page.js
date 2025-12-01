@@ -14,6 +14,7 @@ export default function LoginPage() {
   const [loading, setLoading] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
   const passwordRef = useRef(null);
+  const backend_url = process.env.BACKEND_URL;
 
   const handleEmailChange = (e) => {
     const value = e.target.value;
@@ -29,8 +30,8 @@ export default function LoginPage() {
     setErrorMessage("");
 
     const apiLink = isLogin
-      ? "http://127.0.0.1:8000/users/login"
-      : "http://127.0.0.1:8000/users/signup";
+      ? `${backend_url}/users/login`
+      : `${backend_url}/users/signup`;
 
     try {
       const res = await fetch(apiLink, {

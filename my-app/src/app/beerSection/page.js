@@ -9,12 +9,13 @@ import {
   TrashIcon,
 } from "../../../icon";
 
-export const BeerSection = ({ categories }) => {
+export default function BeerSection({ categories }) {
   const [foods, setFoods] = useState([]);
   const [showAddModal, setShowAddModal] = useState(false);
   const [showEditModal, setShowEditModal] = useState(false);
   const [editingFood, setEditingFood] = useState(null);
   const [openCategory, setOpenCategory] = useState(false);
+  const backend_url = process.env.BACKEND_URL;
   const [notif, setNotif] = useState({
     show: false,
     message: "",
@@ -31,7 +32,7 @@ export const BeerSection = ({ categories }) => {
   const CATEGORY_ID = "6916b7ca8467e6485b805037";
 
   useEffect(() => {
-    fetch("http://localhost:8000/foods")
+    fetch(`${backend_url}/foods`)
       .then((res) => res.json())
       .then((data) => {
         const allFoods = data.foods || [];
@@ -80,7 +81,7 @@ export const BeerSection = ({ categories }) => {
       image: formData.image,
       category: {
         _id: CATEGORY_ID,
-        categoryName: "Vegetarian",
+        categoryName: "Beer",
       },
     };
 
@@ -455,4 +456,4 @@ export const BeerSection = ({ categories }) => {
       )}
     </div>
   );
-};
+}

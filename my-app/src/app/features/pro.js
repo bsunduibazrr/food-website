@@ -1,6 +1,6 @@
 import { useRef, useState } from "react";
 
-export const ProFeature = () => {
+export default function ProFeature() {
   const fileInputRef = useRef(null);
   const [profileImg, setProfileImg] = useState("pro.jpg");
 
@@ -37,4 +37,4 @@ export const ProFeature = () => {
       </div>
     </div>
   );
-};
+}

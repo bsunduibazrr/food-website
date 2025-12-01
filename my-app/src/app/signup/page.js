@@ -8,6 +8,7 @@ export default function SignupPage() {
   const [email, setEmail] = useState("");
   const [isValidEmail, setIsValidEmail] = useState(false);
   const [message, setMessage] = useState("");
+  const backend_url = process.env.BACKEND_URL;
 
   const handleEmailChange = (e) => {
     const value = e.target.value;
@@ -20,7 +21,7 @@ export default function SignupPage() {
     setMessage("");
 
     try {
-      const res = await fetch("http://localhost:8000/users/signup", {
+      const res = await fetch(`${backend_url}/users/signup`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email }),

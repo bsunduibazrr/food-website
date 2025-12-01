@@ -1,12 +1,13 @@
 "use client";
 import { useEffect, useState } from "react";
-import { Calendar } from "../../../icon";
-import { OrderComponent } from "../components/orderComponent";
-import { OrderHead } from "./orderHead";
-import { Pagination } from "./pagination";
-import { ProFeature } from "./pro";
 
-export const OrderInfo = () => {
+import { Pagination } from "../pagination";
+import { Calendar } from "../../../../icon";
+import { OrderHead } from "../orderHead";
+import { OrderComponent } from "@/app/components/orderComponent";
+import ProFeature from "../pro";
+
+export default function OrderInfo() {
   const [orders, setOrders] = useState([]);
   const [selectedOrders, setSelectedOrders] = useState([]);
   const [dropdownOpen, setDropdownOpen] = useState(false);
@@ -20,6 +21,7 @@ export const OrderInfo = () => {
   const [showDateModal, setShowDateModal] = useState(false);
   const [startDate, setStartDate] = useState("");
   const [endDate, setEndDate] = useState("");
+  const backend_url = process.env.BACKEND_URL;
 
   useEffect(() => {
     const savedStart = localStorage.getItem("startDate");
@@ -41,7 +43,7 @@ export const OrderInfo = () => {
     if (!tempState) return;
 
     try {
-      await fetch("http://localhost:8000/order/update-status", {
+      await fetch(`${backend_url}/order/update-status`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
@@ -70,7 +72,7 @@ export const OrderInfo = () => {
 
   const fetchOrders = async () => {
     try {
-      const url = new URL("http://localhost:8000/order/all");
+      const url = new URL(`${backend_url}/order/all`);
 
       url.searchParams.append("page", page);
       url.searchParams.append("limit", 15);
@@ -339,4 +341,4 @@ export const OrderInfo = () => {
       )}
     </div>
   );
-};
+}

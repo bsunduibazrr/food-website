@@ -1,27 +1,28 @@
 "use client";
 import { useState, useEffect } from "react";
-import { CorrectIcon, InputImage } from "../../../icon";
-import { AppetizersSection } from "../appetizersSection/page";
-import { ProFeature } from "../features/pro";
-import { LunchSection } from "../lunchFavsSection/page";
-import { MainDishesSection } from "../mainDishes/page";
-import { PizzaSection } from "../pizzaSection/page";
-import { SaladSection } from "../saladSection/page";
-import { FishAndSeaSection } from "../fishAndSeaSection/page";
-import { BrunchSection } from "../brunchSection/page";
-import { SideDishSection } from "../sideDishSection/page";
-import { DessertSection } from "../dessertSection/page";
-import { BeveragesSection } from "../beveragesSection/page";
-import { AlchoholSection } from "../alchoholSection/page";
-import { JuiceSection } from "../juiceSection/page";
-import { VegetarianSection } from "../vegetarianSection/page";
-import { MongolianSection } from "../mongoliaSection/page";
-import { CheffSection } from "../cheffSpecialsSection/page";
-import { BeerSection } from "../beerSection/page";
-import { CakeSection } from "../cakeSection/page";
-import { SetSection } from "../setFoodSection/page";
 
-export const FoodMenu = () => {
+import JuiceSection from "../juiceSection/page";
+import AppetizersSection from "../appetizersSection/page";
+import SaladSection from "../saladSection/page";
+import PizzaSection from "../pizzaSection/page";
+import LunchSection from "../lunchFavsSection/page";
+import MainDishesSection from "../mainDishes/page";
+import FishAndSeaSection from "../fishAndSeaSection/page";
+import BrunchSection from "../brunchSection/page";
+import SideDishSection from "../sideDishSection/page";
+import DessertSection from "../dessertSection/page";
+import BeveragesSection from "../beveragesSection/page";
+import AlchoholSection from "../alchoholSection/page";
+import VegetarianSection from "../vegetarianSection/page";
+import MongolianSection from "../mongoliaSection/page";
+import CheffSection from "../cheffSpecialsSection/page";
+import BeerSection from "../beerSection/page";
+import CakeSection from "../cakeSection/page";
+import SetSection from "../setFoodSection/page";
+import { CorrectIcon, InputImage } from "../../../icon";
+import ProFeature from "../features/pro";
+
+export default function FoodMenuPage() {
   const [selectedCategory, setSelectedCategory] = useState("All Dishes");
   const [showModal, setShowModal] = useState(false);
   const [newCategoryName, setNewCategoryName] = useState("");
@@ -32,6 +33,7 @@ export const FoodMenu = () => {
   const [showEditModal, setShowEditModal] = useState(false);
   const [editingFood, setEditingFood] = useState(null);
   const [openCategory, setOpenCategory] = useState(false);
+  const backend_url = process.env.BACKEND_URL;
   const [notif, setNotif] = useState({
     show: false,
     message: "",
@@ -39,7 +41,7 @@ export const FoodMenu = () => {
   });
   const [foods, setFoods] = useState([]);
 
-  const apiLink = "http://127.0.0.1:8000/category";
+  const apiLink = `${backend_url}/category`;
 
   const [categories, setCategories] = useState([
     { id: "all", label: "All Dishes", width: 145 },
@@ -77,7 +79,7 @@ export const FoodMenu = () => {
   }, []);
 
   useEffect(() => {
-    fetch("http://localhost:8000/foods")
+    fetch(`${backend_url}/foods`)
       .then((res) => res.json())
       .then((data) => {
         const allFoods = data.foods || [];
@@ -151,7 +153,7 @@ export const FoodMenu = () => {
   };
 
   useEffect(() => {
-    fetch("http://localhost:8000/foods")
+    fetch(`${backend_url}/foods`)
       .then((res) => res.json())
       .then((data) => {
         const allFoods = data.foods || [];
@@ -213,7 +215,7 @@ export const FoodMenu = () => {
     };
 
     try {
-      const res = await fetch("http://localhost:8000/foods", {
+      const res = await fetch(`${backend_url}/foods`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(newFood),
@@ -538,4 +540,4 @@ export const FoodMenu = () => {
       )}
     </div>
   );
-};
+}

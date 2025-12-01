@@ -10,6 +10,7 @@ export const UserBody = () => {
   const [categories, setCategories] = useState([]);
   const categoryRefs = useRef({});
   const [activeIndex, setActiveIndex] = useState(0);
+  const backend_url = process.env.BACKEND_URL;
 
   const handleCategoryClick = (index, id) => {
     setActiveIndex(index);
@@ -29,7 +30,7 @@ export const UserBody = () => {
   };
 
   useEffect(() => {
-    fetch("http://localhost:8000/foods")
+    fetch(`${backend_url}/foods`)
       .then((res) => res.json())
       .then((data) => setFoods(data.foods || []))
       .catch((err) => console.error(err));
@@ -139,7 +140,7 @@ export const UserBody = () => {
                   description={food.ingredients || food.description}
                   image={
                     food.image ||
-                    "/https://thumbs.dreamstime.com/b/no-image-icon-vector-available-picture-symbol-isolated-white-background-suitable-user-interface-element-205805243.jpg"
+                    "https://thumbs.dreamstime.com/b/no-image-icon-vector-available-picture-symbol-isolated-white-background-suitable-user-interface-element-205805243.jpg"
                   }
                   onAdd={(quantity) => handleAddToCart(food, quantity)}
                 />

@@ -1,17 +1,17 @@
 "use client";
 import { useState } from "react";
-import { useRouter, useSearchParams } from "next/navigation";
+import { useRouter } from "next/navigation";
 
 export default function CreatePasswordPage() {
   const router = useRouter();
-  const searchParams = useSearchParams();
 
-  const [email, setEmail] = useState(searchParams.get("email") || "");
+  const [email, setEmail] = useState("");
 
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
   const [message, setMessage] = useState("");
+  const backend_url = process.env.BACKEND_URL;
 
   const handleCreatePassword = async () => {
     setMessage("");
@@ -22,7 +22,7 @@ export default function CreatePasswordPage() {
     }
 
     try {
-      const res = await fetch("http://localhost:8000/users/requestReset", {
+      const res = await fetch(`${backend_url}/users/requestReset`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email }),

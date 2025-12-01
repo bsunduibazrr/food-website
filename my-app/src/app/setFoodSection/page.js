@@ -9,12 +9,13 @@ import {
   TrashIcon,
 } from "../../../icon";
 
-export const SetSection = ({ categories }) => {
+export default function SetSection({ categories }) {
   const [foods, setFoods] = useState([]);
   const [showAddModal, setShowAddModal] = useState(false);
   const [showEditModal, setShowEditModal] = useState(false);
   const [editingFood, setEditingFood] = useState(null);
   const [openCategory, setOpenCategory] = useState(false);
+  const backend_url = process.env.BACKEND_URL;
   const [notif, setNotif] = useState({
     show: false,
     message: "",
@@ -31,7 +32,7 @@ export const SetSection = ({ categories }) => {
   const CATEGORY_ID = "6916bf3b8467e6485b8052cd";
 
   useEffect(() => {
-    fetch("http://localhost:8000/foods")
+    fetch(`${backend_url}/foods`)
       .then((res) => res.json())
       .then((data) => {
         const allFoods = data.foods || [];
@@ -80,7 +81,7 @@ export const SetSection = ({ categories }) => {
       image: formData.image,
       category: {
         _id: CATEGORY_ID,
-        categoryName: "Vegetarian",
+        categoryName: "Set Foods",
       },
     };
 
@@ -457,4 +458,4 @@ export const SetSection = ({ categories }) => {
       )}
     </div>
   );
-};
+}
